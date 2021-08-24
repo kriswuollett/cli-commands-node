@@ -1,0 +1,33 @@
+{
+  "root": "libs/kriswuollett-cli-commands-node",
+  "sourceRoot": "libs/kriswuollett-cli-commands-node/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/kriswuollett-cli-commands-node",
+        "tsConfig": "libs/kriswuollett-cli-commands-node/tsconfig.lib.json",
+        "packageJson": "libs/kriswuollett-cli-commands-node/package.json",
+        "main": "libs/kriswuollett-cli-commands-node/src/index.ts",
+        "assets": ["libs/kriswuollett-cli-commands-node/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/kriswuollett-cli-commands-node/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/kriswuollett-cli-commands-node"],
+      "options": {
+        "jestConfig": "libs/kriswuollett-cli-commands-node/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
